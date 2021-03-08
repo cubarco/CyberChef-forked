@@ -1,8 +1,11 @@
 name: "Fork sync with upstream"
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron:  '*/1 * * * *'
+    - cron:  '*/15 * * * *'
 
 jobs:
   sync_with_upstream:
