@@ -58,7 +58,7 @@ jobs:
         sed -i "s~self.docURL=r.data~self.docURL=\"${CDN_PREFIX}\"~" assets/main.js
 
     - name: Deploy to GitHub Pages
-      if: success() && github.ref == 'refs/heads/upstream-master'
+      if: success()
       uses: crazy-max/ghaction-github-pages@v2
       with:
         target_branch: gh-pages
