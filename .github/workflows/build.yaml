@@ -1,4 +1,4 @@
-name: "Master Build, Test & Deploy"
+name: "Master Build, Test, Customize & Deploy"
 
 on:
   workflow_dispatch:
@@ -51,10 +51,8 @@ jobs:
       if: success()
       working-directory: ./build/prod
       env:
-        CDN_PREFIX="https://cdn.jsdelivr.net/gh/cubarco/CyberChef-forked@gh-pages"
+        CDN_PREFIX: "https://cdn.jsdelivr.net/gh/cubarco/CyberChef-forked@gh-pages"
       run: |
-        rm CyberChef*.zip
-        rm sitemap.xml
         sed -i "s~assets/main.css~${CDN_PREFIX}/assets/main.css~" index.html
         sed -i "s~assets/main.js~${CDN_PREFIX}/assets/main.js~" index.html
         sed -i "s~self.docURL=r.data~self.docURL=\"${CDN_PREFIX}\"~" assets/main.js
