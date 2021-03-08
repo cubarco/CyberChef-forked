@@ -14,7 +14,7 @@ jobs:
 
     steps:
     # Step 1: run a standard checkout action, provided by github
-    - name: Checkout main
+    - name: Checkout current branch
       uses: actions/checkout@v2
       with:
         ref: upstream-master
