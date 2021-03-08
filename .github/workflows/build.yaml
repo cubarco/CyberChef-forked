@@ -58,6 +58,7 @@ jobs:
         sed -i "s~assets/main.css~${CDN_PREFIX}/assets/main.css~" index.html
         sed -i "s~assets/main.js~${CDN_PREFIX}/assets/main.js~" index.html
         sed -i "s~self.docURL=r.data~self.docURL=\"${CDN_PREFIX}\"~" assets/main.js
+        sed -i "/Begin Google/,/End Google/d" index.html
 
     - name: Deploy to GitHub Pages
       if: success()
