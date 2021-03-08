@@ -1,6 +1,8 @@
+name: "Fork sync with upstream"
+
 on:
   schedule:
-    - cron:  '*/5 * * * *'
+    - cron:  '*/1 * * * *'
 
 jobs:
   sync_with_upstream:
