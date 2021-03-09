@@ -3,7 +3,7 @@ name: "Fork sync with upstream"
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '*/30 * * * *'
+    - cron:  '0 0 * * *'
 
 jobs:
   sync_with_upstream:
