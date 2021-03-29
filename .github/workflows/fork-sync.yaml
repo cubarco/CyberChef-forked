@@ -29,8 +29,7 @@ jobs:
     - name: test step
       env:
         output_value: steps.sync.outputs.has_new_commits
-      steps:
-        - run: echo "$output_value"
+      run: echo "$output_value"
 
     - name: Notify build workflow.
       if: ${{ steps.sync.outputs.has_new_commits == 'true' }}
