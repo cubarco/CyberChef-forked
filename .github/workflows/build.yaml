@@ -2,8 +2,6 @@ name: "Master Build, Test, Customize & Deploy"
 
 on:
   workflow_dispatch:
-  repository_dispatch:
-    types: [upstream_updated]
 
 jobs:
   main:
