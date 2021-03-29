@@ -28,7 +28,7 @@ jobs:
 
     - name: test step
       env:
-        output_value: steps.sync.outputs.has_new_commits
+        output_value: ${{ steps.sync.outputs.has_new_commits }}
       run: echo "$output_value"
 
     - name: Notify build workflow.
