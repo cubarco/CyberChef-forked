@@ -25,3 +25,12 @@ jobs:
         upstream_repository: gchq/CyberChef
         upstream_branch: master
         target_branch: upstream-master
+
+    - name: Notify build workflow.
+      if: steps.sync.outputs.has_new_commits
+      uses: mvasigh/dispatch-action@main
+        with:
+          # You should create a personal access token and store it in your repository
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: cubarco
+          event_type: upstream_updated
