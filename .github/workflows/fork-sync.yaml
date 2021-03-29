@@ -26,11 +26,6 @@ jobs:
         upstream_branch: master
         target_branch: upstream-master
 
-    - name: test step
-      env:
-        output_value: ${{ steps.sync.outputs.has_new_commits }}
-      run: echo "$output_value"
-
     - name: Notify build workflow.
       if: ${{ steps.sync.outputs.has_new_commits == 'true' }}
       uses: benc-uk/workflow-dispatch@v1
