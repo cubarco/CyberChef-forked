@@ -20,11 +20,12 @@ jobs:
     # Step 2: run this sync action - specify the upstream repo, upstream branch to sync with, and target sync branch
     - name: Pull (Fast-Forward) upstream changes
       id: sync
-      uses: aormsby/Fork-Sync-With-Upstream-action@v2.1
+      uses: aormsby/Fork-Sync-With-Upstream-action@v3.1
       with:
-        upstream_repository: gchq/CyberChef
-        upstream_branch: master
-        target_branch: upstream-master
+        target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+        target_sync_branch: upstream-master
+        upstream_sync_repo: gchq/CyberChef
+        upstream_sync_branch: master
 
     - name: Notify build workflow.
       if: ${{ steps.sync.outputs.has_new_commits == 'true' }}
