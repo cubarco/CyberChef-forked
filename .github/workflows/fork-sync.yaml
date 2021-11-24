@@ -21,8 +21,10 @@ jobs:
     - name: Pull (Fast-Forward) upstream changes
       id: sync
       uses: aormsby/Fork-Sync-With-Upstream-action@v3.1
+      env:
+          GITHUB_TOKEN: ${{ secrets.SYNC_TOKEN }}
       with:
-        target_repo_token: ${{ secrets.SYNC_TOKEN }}
+        target_repo_token: ${{ secrets.GITHUB_TOKEN }}
         target_sync_branch: upstream-master
         upstream_sync_repo: gchq/CyberChef
         upstream_sync_branch: master
