@@ -9,7 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: upstream-master
+        repository: gchq/CyberChef
+        ref: master
 
     - name: Set node version
       uses: actions/setup-node@v1
