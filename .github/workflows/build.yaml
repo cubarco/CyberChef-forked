@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         repository: gchq/CyberChef
-        ref: master
+        ref: 9.35.1
 
     - name: Set node version
       uses: actions/setup-node@v1
